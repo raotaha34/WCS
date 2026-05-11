@@ -1,4 +1,11 @@
+wwwroot\css\dashboard.css
+wwwroot\css\responsive.css
+wwwroot\css\style.css
 wwwroot\favicon.ico
+wwwroot\js\app.js
+wwwroot\js\chart.js
+wwwroot\js\dashboard.js
+wwwroot\js\validation.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -59,13 +66,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\dashboard.css
-wwwroot\css\responsive.css
-wwwroot\css\style.css
-wwwroot\js\app.js
-wwwroot\js\chart.js
-wwwroot\js\dashboard.js
-wwwroot\js\validation.js
 C:\Users\hassa\source\repos\wcm\wcm\wwwroot\favicon.ico
 C:\Users\hassa\source\repos\wcm\wcm\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\hassa\source\repos\wcm\wcm\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

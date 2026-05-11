@@ -82,7 +82,6 @@ C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\ii2ke3fjf8-{0}-
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\0img91zpjp-{0}-jg58pdq3a4-jg58pdq3a4.gz
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\5w4qqsesns-{0}-a7pn14za2w-a7pn14za2w.gz
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\8a8yqogpws-{0}-tclj87upeo-tclj87upeo.gz
-C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\watylmx585-{0}-292k6ym1zx-292k6ym1zx.gz
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\staticwebassets.development.json
@@ -205,3 +204,5 @@ C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\3oyrdhkno0-{0}-
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\5oacn6w452-{0}-05b386xedo-05b386xedo.gz
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\8o62cie6gx-{0}-29x0jo625s-29x0jo625s.gz
 C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\wcm.sourcelink.json
+C:\Users\hassa\source\repos\wcm\wcm\obj\Debug\net10.0\compressed\watylmx585-{0}-0krjobg4kb-0krjobg4kb.gz

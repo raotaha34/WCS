@@ -39,7 +39,7 @@ namespace wcm.Controllers
                 }
 
                 var result = await _signInManager.PasswordSignInAsync(
-                    user.UserName,
+                    user.UserName!,
                     model.Password,
                     model.RememberMe,
                     lockoutOnFailure: false);

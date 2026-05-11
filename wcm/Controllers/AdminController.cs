@@ -24,23 +24,23 @@ namespace wcm.Controllers
             return View();
         }
         //ResidentProfile view
-        public async Task<IActionResult> Resident()
+    public async Task<IActionResult> Resident()
+{
+    var residents = await _context.ResidentProfiles
+        .Include(r => r.User)
+        .Select(r => new ResidentViewModel
         {
-            var residents = await _context.ResidentProfiles
-                .Include(r => r.User)
-                .Select(r => new ResidentViewModel
-                {
-                    Id = r.Id,
-                    FullName = r.User.FullName,
-                    Email = r.User.Email,
-                    PhoneNumber = r.User.PhoneNumber,
-                    UnitNumber = r.User.UnitNumber,
-                    IsActive = r.User.IsActive
-                })
-                .ToListAsync();
+            Id = r.Id,
+            FullName = r.User!.FullName,
+            Email = r.User.Email,
+            PhoneNumber = r.User.PhoneNumber,
+            UnitNumber = r.User.UnitNumber,
+            IsActive = r.User.IsActive
+        })
+        .ToListAsync();
 
-            return View(residents);
-        }
+    return View(residents); // ✅ correct
+}
 
         // ================= CREATE RESIDENT =================
 

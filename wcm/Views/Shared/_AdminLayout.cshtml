@@ -1,3 +1,11 @@
+@using Microsoft.AspNetCore.Identity
+@using wcm.Models
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    var currentUser = await UserManager.GetUserAsync(User);
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +27,7 @@
     <div class="sidebar admin-sidebar" id="sidebar">
         <div class="sidebar-logo"><i class="bi bi-shield-lock"></i> Admin Panel</div>
         <ul class="sidebar-menu">
-            <li><a href="@Url.Action("Index","AdminDashboard")" class="@(ViewData["ActivePage"]?.ToString() == "Dashboard" ? "active" : "")"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+            <li><a href="@Url.Action("Index","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Dashboard" ? "active" : "")"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
             <li><a href="@Url.Action("Resident","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Resident" ? "active" : "")"><i class="bi bi-people"></i> Residents</a></li>
             <li><a href="@Url.Action("Index","AdminIssues")" class="@(ViewData["ActivePage"]?.ToString() == "Issues" ? "active" : "")"><i class="bi bi-exclamation-triangle"></i> Issues</a></li>
             <li><a href="@Url.Action("Index","AdminNotices")" class="@(ViewData["ActivePage"]?.ToString() == "Notices" ? "active" : "")"><i class="bi bi-megaphone"></i> Notices</a></li>
@@ -38,14 +46,22 @@
             <div class="nav-icons">
                 <div class="icon-btn notification-btn">
                     <i class="bi bi-bell"></i><span class="badge">5</span>
-                </div>
+                 </div>
                 <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=@currentUser!.FullName&background=6366F1&color=fff" alt="Admin">
+
+                    <div>
+                        <div class="name">@currentUser.FullName</div>
+                        <div class="role">Administrator</div>
+                    </div>
+                </div>
+                @*<div class="user-profile">
                     <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366F1&color=fff" alt="Admin">
                     <div>
                         <div class="name">Admin User</div>
                         <div class="role">Administrator</div>
                     </div>
-                </div>
+                </div> *@
             </div>
         </div>
 
