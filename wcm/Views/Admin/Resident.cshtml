@@ -62,8 +62,18 @@
                                 }
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-warning">Edit</button>
-                                <button class="btn btn-sm btn-danger">Delete</button>
+                                <button class="btn btn-sm btn-warning"
+                                        onclick='openEditModal(@item.Id, @Html.Raw(System.Text.Json.JsonSerializer.Serialize(item.FullName)), @Html.Raw(System.Text.Json.JsonSerializer.Serialize(item.UnitNumber)), @Html.Raw(System.Text.Json.JsonSerializer.Serialize(item.Email)), @Html.Raw(System.Text.Json.JsonSerializer.Serialize(item.PhoneNumber)), @item.IsActive.ToString().ToLower())'>
+                                    Edit
+                                </button>
+                                <form asp-action="DeleteResident" asp-controller="Admin" method="post" style="display:inline;">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Are you sure?')">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     }
@@ -79,7 +89,7 @@
     </div>
 </div>
 
-<!-- Add Resident Modal -->
+<!-- Add Resident Modal --> 
 <div class="modal fade" id="addResidentModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -119,3 +129,89 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Edit Resident Modal -->
+<div class="modal fade" id="editResidentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Edit Resident</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form asp-action="EditResident" asp-controller="Admin" method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" name="Id" id="editId" />
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="FullName" id="editFullName" class="form-control form-control-custom">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Unit Number</label>
+                        <input type="text" name="UnitNumber" id="editUnitNumber" class="form-control form-control-custom">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="Email" id="editEmail" class="form-control form-control-custom">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" name="PhoneNumber" id="editPhone" class="form-control form-control-custom">
+                    </div>
+
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox"
+                               name="IsActive"
+                               value="true"
+                               class="form-check-input"
+                               id="editIsActive">
+                        <label class="form-check-label">Active</label>
+                    </div>
+                    <div class="modal-footer px-0 pb-0">
+                        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary-custom">Update Resident</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    function openEditModal(id, name, unit, email, phone, isActive) {
+
+        document.getElementById("editId").value = id;
+        document.getElementById("editFullName").value = name ?? "";
+        document.getElementById("editUnitNumber").value = unit ?? "";
+        document.getElementById("editEmail").value = email || "";
+        document.getElementById("editPhone").value = phone || "";
+        document.getElementById("editIsActive").checked = (isActive === true || isActive === "true");
+
+        var modal = new bootstrap.Modal(document.getElementById('editResidentModal'));
+        modal.show();
+
+    }
+
+
+    
+    document.getElementById('editResidentModal').addEventListener('hidden.bs.modal', function () {
+        this.querySelector("form").reset();
+    });
+
+   
+</script>

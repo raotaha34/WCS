@@ -29,10 +29,10 @@
         <ul class="sidebar-menu">
             <li><a href="@Url.Action("Index","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Dashboard" ? "active" : "")"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
             <li><a href="@Url.Action("Resident","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Resident" ? "active" : "")"><i class="bi bi-people"></i> Residents</a></li>
-            <li><a href="@Url.Action("Index","AdminIssues")" class="@(ViewData["ActivePage"]?.ToString() == "Issues" ? "active" : "")"><i class="bi bi-exclamation-triangle"></i> Issues</a></li>
-            <li><a href="@Url.Action("Index","AdminNotices")" class="@(ViewData["ActivePage"]?.ToString() == "Notices" ? "active" : "")"><i class="bi bi-megaphone"></i> Notices</a></li>
-            <li><a href="@Url.Action("Index","AdminEvents")" class="@(ViewData["ActivePage"]?.ToString() == "Events" ? "active" : "")"><i class="bi bi-calendar-event"></i> Events</a></li>
-            <li><a href="@Url.Action("Index","AdminSettings")" class="@(ViewData["ActivePage"]?.ToString() == "Settings" ? "active" : "")"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="@Url.Action("Issue","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Issues" ? "active" : "")"><i class="bi bi-exclamation-triangle"></i> Issues</a></li>
+            <li><a href="@Url.Action("Notice","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Notices" ? "active" : "")"><i class="bi bi-megaphone"></i> Notices</a></li>
+            <li><a href="@Url.Action("Event","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Events" ? "active" : "")"><i class="bi bi-calendar-event"></i> Events</a></li>
+            <li><a href="@Url.Action("Setting","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Settings" ? "active" : "")"><i class="bi bi-gear"></i> Settings</a></li>
             <li><a href="@Url.Action("Logout","Account")" class="logout-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
         </ul>
     </div>
