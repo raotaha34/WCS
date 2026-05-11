@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Report Issue";
+    ViewData["ActivePage"] = "ReportIssue";
+}
+
+<div class="page-header">
+    <h1><i class="bi bi-tools me-2"></i>Report an Issue</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card-custom p-4 p-md-5">
+            <h5 class="fw-bold mb-4">Issue Details</h5>
+            <form asp-action="ReportIssue" asp-controller="Issues" method="post" id="issueForm" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="mb-4">
+                    <label class="form-label fw-medium">Issue Category</label>
+                    <select name="Category" id="issueCategory" class="form-select form-control-custom">
+                        <option value="">Select a category</option>
+                        <option value="Plumbing">Plumbing</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Security">Security</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-medium">Issue Title</label>
+                    <input type="text" name="Title" id="issueTitle" class="form-control form-control-custom" placeholder="Brief title of the issue">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-medium">Description</label>
+                    <textarea name="Description" id="issueDescription" class="form-control form-control-custom" rows="4" placeholder="Describe the issue in detail..."></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-medium">Location</label>
+                    <input type="text" name="Location" id="issueLocation" class="form-control form-control-custom" placeholder="e.g., Building A, Floor 2, Apartment 102">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-medium">Upload Image (Optional)</label>
+                    <div class="upload-preview" onclick="document.getElementById('issueImage').click()">
+                        <div class="upload-text text-center">
+                            <i class="bi bi-cloud-upload" style="font-size:2rem;color:var(--accent);margin-bottom:8px;display:block;"></i>
+                            <span>Click to upload an image</span>
+                        </div>
+                        <img id="imagePreview" class="d-none" alt="Preview">
+                    </div>
+                    <input type="file" name="Image" id="issueImage" class="d-none" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn btn-primary-custom w-100 py-2">
+                    <i class="bi bi-send me-2"></i>Submit Issue
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+            <div class="modal-body">
+                <div style="width:70px;height:70px;border-radius:50%;background:#ECFDF5;color:#10B981;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px;">
+                    <i class="bi bi-check-lg"></i>
+                </div>
+                <h4 class="fw-bold mb-2">Issue Submitted!</h4>
+                <p class="text-muted mb-4">Your issue has been reported successfully. You can track its status in My Requests.</p>
+                <a href="@Url.Action("MyRequests","Issues")" class="btn btn-primary-custom">View My Requests</a>
+                <button type="button" class="btn btn-outline-custom ms-2" data-bs-dismiss="modal">Report Another</button>
+            </div>
+        </div>
+    </div>
+</div>

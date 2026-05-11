@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Notices";
+    ViewData["ActivePage"] = "Notices";
+}
+
+<div class="page-header">
+    <h1><i class="bi bi-megaphone me-2"></i>Community Notices</h1>
+</div>
+
+<div class="card-custom p-4 mb-4">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="noticeSearch" class="form-control border-start-0" placeholder="Search notices...">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <select id="noticeFilter" class="form-select">
+                <option value="">All Categories</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Community">Community</option>
+                <option value="Security">Security</option>
+                <option value="Rules">Rules</option>
+                <option value="Facilities">Facilities</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div id="noticesContainer"></div>
+<div id="noticeModals"></div>

@@ -1,0 +1,145 @@
+/* ==========================================
+   Responsive Styles
+   ========================================== */
+
+/* --- Tablet (768px - 991px) --- */
+@media (max-width: 991.98px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 10px 0 40px rgba(0,0,0,0.15);
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .hamburger-btn {
+    display: block;
+  }
+  .top-navbar .search-bar {
+    width: 240px;
+  }
+  .login-wrapper {
+    flex-direction: column;
+  }
+  .login-banner {
+    min-height: 280px;
+    padding: 32px;
+  }
+  .login-banner h1 {
+    font-size: 1.8rem;
+  }
+  .login-form-area {
+    padding: 32px;
+  }
+}
+
+/* --- Mobile (< 768px) --- */
+@media (max-width: 767.98px) {
+  .page-content {
+    padding: 16px;
+  }
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .top-navbar {
+    padding: 12px 16px;
+  }
+  .top-navbar .search-bar {
+    display: none;
+  }
+  .user-profile .name,
+  .user-profile .role {
+    display: none;
+  }
+  .stat-card {
+    padding: 18px;
+  }
+  .stat-card .icon-box {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+  .stat-card .stat-info h3 {
+    font-size: 1.3rem;
+  }
+  .quick-actions {
+    flex-direction: column;
+  }
+  .quick-action-btn {
+    min-width: 100%;
+  }
+  .welcome-banner {
+    padding: 24px;
+  }
+  .welcome-banner h2 {
+    font-size: 1.2rem;
+  }
+  .notice-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .event-card .event-img {
+    height: 140px;
+  }
+  .login-banner {
+    min-height: 200px;
+    padding: 24px;
+  }
+  .login-banner h1 {
+    font-size: 1.5rem;
+  }
+  .login-banner p {
+    font-size: 0.9rem;
+  }
+  .login-form-area {
+    padding: 24px 16px;
+  }
+  .contact-info-card {
+    padding: 20px;
+  }
+  .admin-stat-card {
+    padding: 18px;
+  }
+  .chart-container {
+    padding: 16px;
+  }
+  .card-custom {
+    border-radius: 14px;
+  }
+}
+
+/* --- Small Mobile (< 576px) --- */
+@media (max-width: 575.98px) {
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .sidebar {
+    width: 280px;
+  }
+  .nav-icons {
+    gap: 10px;
+  }
+  .nav-icons .icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .login-banner::before,
+  .login-banner::after {
+    display: none;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,60 @@
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Manage Events";
+    ViewData["ActivePage"] = "Events";
+}
+
+<div class="page-header">
+    <h1><i class="bi bi-calendar-event me-2"></i>Manage Events</h1>
+    <button class="btn btn-primary-custom" data-bs-toggle="modal" data-bs-target="#addEventModal"><i class="bi bi-plus-lg me-1"></i>Add Event</button>
+</div>
+
+<div class="card-custom p-0 overflow-hidden">
+    <div class="table-responsive">
+        <table class="table table-custom mb-0" id="adminEventsTable">
+            <thead>
+                <tr><th>Title</th><th>Date</th><th>Time</th><th>Venue</th><th>Action</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Add Event Modal -->
+<div class="modal fade" id="addEventModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Add New Event</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Create" asp-controller="AdminEvents" method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label class="form-label">Event Title</label>
+                        <input type="text" name="Title" class="form-control form-control-custom" placeholder="Event title">
+                    </div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Date</label>
+                            <input type="date" name="Date" class="form-control form-control-custom">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Time</label>
+                            <input type="text" name="Time" class="form-control form-control-custom" placeholder="4:00 PM - 10:00 PM">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Venue</label>
+                        <input type="text" name="Venue" class="form-control form-control-custom" placeholder="Event venue">
+                    </div>
+                    <div class="modal-footer px-0 pb-0">
+                        <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary-custom">Add Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
