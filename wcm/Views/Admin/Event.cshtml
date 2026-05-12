@@ -6,6 +6,20 @@
     ViewData["ActivePage"] = "Events";
 }
 
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
 <div class="page-header">
     <h1><i class="bi bi-calendar-event me-2"></i>Manage Events</h1>
 
@@ -15,7 +29,6 @@
         <i class="bi bi-plus-lg me-1"></i>Add Event
     </button>
 </div>
-
 <!-- ================= TABLE ================= -->
 <div class="card-custom p-0 overflow-hidden">
     <div class="table-responsive">
@@ -43,14 +56,12 @@
                             <td>@item.Venue</td>
 
                             <td>
-
                                 <button type="button"
                                         class="btn btn-warning btn-sm"
                                         onclick="loadEditEvent(@item.Id)">
                                     Edit
                                 </button>
 
-                                <!-- DELETE -->
                                 <form asp-action="DeleteEvent"
                                       asp-controller="Admin"
                                       method="post"
@@ -106,8 +117,9 @@
                         <label>Venue</label>
                         <input name="Venue" class="form-control" required />
                     </div>
+
                     <div class="mb-3">
-                        <label class="form-label">Description</label>
+                        <label>Description</label>
                         <textarea name="Description" class="form-control" rows="3"></textarea>
                     </div>
 
@@ -162,8 +174,11 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <textarea name="Description" class="form-control" rows="3"></textarea>
+                        <label>Description</label>
+                        <textarea name="Description"
+                                  id="editDescription"
+                                  class="form-control"
+                                  rows="3"></textarea>
                     </div>
 
                 </div>
@@ -182,35 +197,44 @@
         </div>
     </div>
 </div>
-
-
-<!-- ================= SCRIPT ================= -->
 <script>
     function loadEditEvent(id) {
 
-        fetch('/Admin/EditEvent?id=' + id)
+        fetch('/Admin/GetEvent?id=' + id)
             .then(res => {
-                if (!res.ok) {
-                    alert("Event not found");
-                    return;
-                }
+                if (!res.ok) throw new Error("HTTP " + res.status);
                 return res.json();
             })
             .then(data => {
 
-                if (!data) return;
+                const modal = document.getElementById('editEventModal');
 
-                document.getElementById("editId").value = data.id || "";
-                document.getElementById("editTitle").value = data.title || "";
-                document.getElementById("editVenue").value = data.venue || "";
-                document.getElementById("editDescription").value = data.description || "";
-                document.getElementById("editEventDate").value = data.eventDate || "";
+                const fields = {
+                    id: document.getElementById("editId"),
+                    title: document.getElementById("editTitle"),
+                    date: document.getElementById("editEventDate"),
+                    venue: document.getElementById("editVenue"),
+                    desc: document.getElementById("editDescription")
+                };
 
-                new bootstrap.Modal(document.getElementById('editEventModal')).show();
+                // HARD CHECK (THIS PREVENTS YOUR ERROR)
+                if (!fields.id || !fields.title || !fields.date || !fields.venue || !fields.desc) {
+                    console.error("Edit modal fields not found in DOM");
+                    return;
+                }
+
+                fields.id.value = data.id ?? "";
+                fields.title.value = data.title ?? "";
+                fields.date.value = data.eventDate ?? "";
+                fields.venue.value = data.venue ?? "";
+                fields.desc.value = data.description ?? "";
+
+                const modalInstance = new bootstrap.Modal(modal);
+                modalInstance.show();
             })
             .catch(err => {
-                console.error(err);
-                alert("Error loading event");
+                console.error("Edit failed:", err);
+                alert("Event loading failed");
             });
     }
 </script>

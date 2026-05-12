@@ -2375,11 +2375,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hassa\\source\\repos\\wcm\\wcm\\wcm.csproj",
+      "projectUniqueName": "C:\\Users\\hassa\\source\\WCS\\wcm\\wcm.csproj",
       "projectName": "wcm",
-      "projectPath": "C:\\Users\\hassa\\source\\repos\\wcm\\wcm\\wcm.csproj",
+      "projectPath": "C:\\Users\\hassa\\source\\WCS\\wcm\\wcm.csproj",
       "packagesPath": "C:\\Users\\hassa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hassa\\source\\repos\\wcm\\wcm\\obj\\",
+      "outputPath": "C:\\Users\\hassa\\source\\WCS\\wcm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

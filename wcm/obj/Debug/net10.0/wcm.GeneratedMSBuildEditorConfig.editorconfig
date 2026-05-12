@@ -11,89 +11,89 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = wcm
 build_property.RootNamespace = wcm
-build_property.ProjectDir = C:\Users\hassa\source\repos\wcm\wcm\
+build_property.ProjectDir = C:\Users\hassa\source\WCS\wcm\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\hassa\source\repos\wcm\wcm
+build_property.MSBuildProjectDirectory = C:\Users\hassa\source\WCS\wcm
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Account/Login.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Admin/Event.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Admin/Event.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRXZlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Admin/Index.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Admin/Issue.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Admin/Issue.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSXNzdWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Admin/Notice.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Admin/Notice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTm90aWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Admin/Resident.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Admin/Resident.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzaWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Admin/Setting.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Admin/Setting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Contact/Index.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Events/Index.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Events/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Home/Index.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Issues/MyRequests.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Issues/MyRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXE15UmVxdWVzdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Issues/ReportIssue.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Issues/ReportIssue.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXFJlcG9ydElzc3VlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Notices/Index.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Notices/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWNlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Shared/_Layout.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Shared/_ViewImports.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Shared/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/Shared/_ViewStart.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/Shared/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/_ViewImports.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/repos/wcm/wcm/Views/_ViewStart.cshtml]
+[C:/Users/hassa/source/WCS/wcm/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

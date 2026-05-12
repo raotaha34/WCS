@@ -406,51 +406,59 @@ namespace wcm.Controllers
             return RedirectToAction("Event");
         }
         //================= edit 
-        [HttpGet]
-        public async Task<IActionResult> EditEvent(int id)
-        {
-            var eventData = await _context.Events.FindAsync(id);
+        // =========================
+        // GET EVENT FOR EDIT MODAL
 
-            if (eventData == null)
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetEvent(int id)
+        {
+            var entity = await _context.Events
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (entity == null)
                 return NotFound();
 
             return Json(new
             {
-                eventData.Id,
-                eventData.Title,
-                eventData.Venue,
-                eventData.EventDate,
-                eventData.Description
+                id = entity.Id,
+                title = entity.Title,
+                eventDate = entity.EventDate.ToString("yyyy-MM-ddTHH:mm"),
+                venue = entity.Venue,
+                description = entity.Description
             });
         }
-        //edit event method [HttpPost]
+
+        // ================= UPDATE EVENT =================
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditEvent(EventViewModel model)
         {
-            if (model.Id <= 0)
+            if (model == null || model.Id == 0)
             {
-                TempData["Error"] = "Invalid event";
-                return RedirectToAction("Event");
+                TempData["Error"] = "Invalid data";
+                return RedirectToAction(nameof(Event));
             }
 
-            var entity = await _context.Events.FindAsync(model.Id);
+            var entity = await _context.Events
+                .FirstOrDefaultAsync(x => x.Id == model.Id);
 
             if (entity == null)
             {
                 TempData["Error"] = "Event not found";
-                return RedirectToAction("Event");
+                return RedirectToAction(nameof(Event));
             }
 
             entity.Title = model.Title;
             entity.EventDate = model.EventDate;
             entity.Venue = model.Venue;
-            entity.Description = model.Description ?? "";
-            entity.IsActive = model.IsActive;
+            entity.Description = model.Description;
 
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "Event updated successfully";
-            return RedirectToAction("Event");
+            return RedirectToAction(nameof(Event));
         }
 
         //delete event method
@@ -489,6 +497,7 @@ namespace wcm.Controllers
         {
             return View();
         }
+
 
     }
 }

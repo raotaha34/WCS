@@ -24,4 +24,6 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Notification> Notifications { get; set; }
 
     public DbSet<AppSetting> AppSettings { get; set; }
+
+    
 }
