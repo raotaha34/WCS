@@ -487,17 +487,5 @@ namespace wcm.Controllers
 
 
 
-
-
-
-
-
-
-        public IActionResult Setting()
-        {
-            return View();
-        }
-
-
     }
 }

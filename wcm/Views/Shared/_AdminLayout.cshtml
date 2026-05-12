@@ -3,9 +3,13 @@
 @inject UserManager<ApplicationUser> UserManager
 
 @{
-    var currentUser = await UserManager.GetUserAsync(User);
-}
+    ApplicationUser? currentUser = null;
 
+    if (User?.Identity?.IsAuthenticated == true)
+    {
+        currentUser = await UserManager.GetUserAsync(User);
+    }
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +36,7 @@
             <li><a href="@Url.Action("Issue","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Issues" ? "active" : "")"><i class="bi bi-exclamation-triangle"></i> Issues</a></li>
             <li><a href="@Url.Action("Notice","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Notices" ? "active" : "")"><i class="bi bi-megaphone"></i> Notices</a></li>
             <li><a href="@Url.Action("Event","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Events" ? "active" : "")"><i class="bi bi-calendar-event"></i> Events</a></li>
-            <li><a href="@Url.Action("Setting","Admin")" class="@(ViewData["ActivePage"]?.ToString() == "Settings" ? "active" : "")"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="@Url.Action("Setting", "AdminSettings")"class="@(ViewData["ActivePage"]?.ToString() == "Settings" ? "active" : "")"><i class="bi bi-gear"></i> Settings</a></li>
             <li><a href="@Url.Action("Logout","Account")" class="logout-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
         </ul>
     </div>
@@ -48,21 +52,14 @@
                     <i class="bi bi-bell"></i><span class="badge">5</span>
                  </div>
                 <div class="user-profile">
-                    <img src="https://ui-avatars.com/api/?name=@currentUser!.FullName&background=6366F1&color=fff" alt="Admin">
+                    <img src="https://ui-avatars.com/api/?name=@(currentUser?.FullName ?? "Admin")&background=6366F1&color=fff">
 
                     <div>
-                        <div class="name">@currentUser.FullName</div>
+                        <div class="name">@(currentUser?.FullName ?? "Admin")</div>
                         <div class="role">Administrator</div>
                     </div>
                 </div>
-                @*<div class="user-profile">
-                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366F1&color=fff" alt="Admin">
-                    <div>
-                        <div class="name">Admin User</div>
-                        <div class="role">Administrator</div>
-                    </div>
-                </div> *@
-            </div>
+              </div>
         </div>
 
         <div class="page-content">

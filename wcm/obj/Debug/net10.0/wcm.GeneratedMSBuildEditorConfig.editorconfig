@@ -26,6 +26,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/hassa/source/WCS/wcm/Views/AdminSettings/Setting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TZXR0aW5nc1xTZXR0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hassa/source/WCS/wcm/Views/Admin/Event.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRXZlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/hassa/source/WCS/wcm/Views/Admin/Resident.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzaWRlbnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/hassa/source/WCS/wcm/Views/Admin/Setting.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hassa/source/WCS/wcm/Views/Contact/Index.cshtml]
