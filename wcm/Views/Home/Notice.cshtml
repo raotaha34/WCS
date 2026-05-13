@@ -1,0 +1,144 @@
+@model List<wcm.ViewModels.UserNoticeVM>
+
+@{
+    ViewData["Title"] = "Notices";
+    ViewData["ActivePage"] = "Notices";
+}
+
+
+<div class="page-header">
+    <h1>
+        <i class="bi bi-megaphone me-2"></i>
+        Community Notices
+    </h1>
+</div>
+
+<!-- SEARCH + FILTER -->
+<div class="card-custom p-4 mb-4">
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+
+                <input type="text"
+                       id="noticeSearch"
+                       class="form-control border-start-0"
+                       placeholder="Search notices...">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <select id="noticeFilter" class="form-select">
+                <option value="">All Categories</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Community">Community</option>
+                <option value="Security">Security</option>
+                <option value="Rules">Rules</option>
+                <option value="Facilities">Facilities</option>
+            </select>
+        </div>
+
+    </div>
+</div>
+
+<!-- NOTICES -->
+<div class="row g-4" id="noticesContainer">
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var notice in Model)
+        {
+            <div class="col-lg-6 notice-card"
+                 data-category="@notice.Category">
+
+                <div class="card-custom p-4 h-100">
+
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+
+                        <div>
+
+                            <span class="badge bg-primary mb-2">
+                                @notice.Category
+                            </span>
+
+                            <h5 class="fw-bold mb-0">
+                                @notice.Title
+                            </h5>
+
+                        </div>
+
+                        <small class="text-muted">
+                            @notice.PublishDate.ToString("dd MMM yyyy")
+                        </small>
+
+                    </div>
+
+                    <p class="text-muted mb-0">
+                        @notice.Description
+                    </p>
+
+                </div>
+
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12">
+            <div class="alert alert-info">
+                No notices available.
+            </div>
+        </div>
+    }
+
+</div>
+
+@section Scripts {
+
+    <script>
+
+        // SEARCH
+        document.getElementById("noticeSearch")
+            .addEventListener("keyup", function () {
+
+                let value = this.value.toLowerCase();
+
+                document.querySelectorAll(".notice-card")
+                    .forEach(card => {
+
+                        let text = card.innerText.toLowerCase();
+
+                        card.style.display =
+                            text.includes(value)
+                                ? "block"
+                                : "none";
+                    });
+            });
+
+        // FILTER
+        document.getElementById("noticeFilter")
+            .addEventListener("change", function () {
+
+                let category = this.value;
+
+                document.querySelectorAll(".notice-card")
+                    .forEach(card => {
+
+                        if (category === "") {
+                            card.style.display = "block";
+                        }
+                        else {
+                            card.style.display =
+                                card.dataset.category === category
+                                    ? "block"
+                                    : "none";
+                        }
+                    });
+            });
+
+    </script>
+
+}

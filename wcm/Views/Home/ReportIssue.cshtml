@@ -1,3 +1,4 @@
+@model wcm.ViewModels.IssueCreateVM
 @{
     ViewData["Title"] = "Report Issue";
     ViewData["ActivePage"] = "ReportIssue";
@@ -11,8 +12,12 @@
     <div class="col-lg-8">
         <div class="card-custom p-4 p-md-5">
             <h5 class="fw-bold mb-4">Issue Details</h5>
-            <form asp-action="ReportIssue" asp-controller="Issues" method="post" id="issueForm" enctype="multipart/form-data">
-                @Html.AntiForgeryToken()
+            <form asp-action="ReportIssue"
+                  asp-controller="Home"
+                  method="post"
+                  enctype="multipart/form-data">
+                
+                  @Html.AntiForgeryToken()
                 <div class="mb-4">
                     <label class="form-label fw-medium">Issue Category</label>
                     <select name="Category" id="issueCategory" class="form-select form-control-custom">

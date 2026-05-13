@@ -22,10 +22,45 @@ namespace wcm.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            ViewData["ResidentCount"] = await _context.ResidentProfiles.CountAsync();
+            // Residents count
+            ViewData["ResidentCount"] =
+                await _context.ResidentProfiles.CountAsync();
 
-            return View();
+            // Issues count
+            ViewData["Inprogress"] =
+                await _context.Issues.CountAsync(i => i.Status == "In Progress");
+
+            ViewData["OpenIssue"] =
+                await _context.Issues.CountAsync(i => i.Status == "OpenIssue");
+             
+            ViewData["ResolvedIssues"] =
+                await _context.Issues.CountAsync(i => i.Status == "Resolved");
+
+            // Total issues
+            ViewData["TotalIssues"] =
+                await _context.Issues.CountAsync();
+
+            // ALL issues for admin table
+            var issues = await _context.Issues
+            .Include(i => i.User)
+            .OrderByDescending(i => i.CreatedAt)
+            .Select(i => new AdminIssueVM
+        {
+            Id = i.Id,
+            Title = i.Title!,
+            ResidentName = i.User != null
+                ? i.User.FullName!
+                : "Unknown",
+
+            Category = i.Category!,
+            Status = i.Status,
+            CreatedAt = i.CreatedAt
+          })
+         .ToListAsync();
+
+            return View(issues);
         }
+
         //ResidentProfile view
         public async Task<IActionResult> Resident()
 {
@@ -234,29 +269,51 @@ namespace wcm.Controllers
 
             return RedirectToAction("Resident");
         }
-
+        //=========Issue==========
         public async Task<IActionResult> Issue()
         {
             var issues = await _context.Issues
                 .Include(i => i.User)
-                .Select(i => new
+                .OrderByDescending(i => i.CreatedAt)
+                .Select(i => new AdminIssueVM
                 {
-                    i.Id,
-                    i.Title,
-                    i.Description,
-                    i.Category,
-                    i.Status,
-                    i.CreatedAt,
-                    User = new
-                    {
-                        i.User!.FullName,
-                        i.User.UnitNumber
-                    }
+                    Id = i.Id,
+                    Title = i.Title!,
+                    ResidentName = i.User != null
+                        ? i.User.FullName!
+                        : "Unknown",
+
+                    Category = i.Category!,
+                    Status = i.Status,
+                    CreatedAt = i.CreatedAt
                 })
                 .ToListAsync();
 
             return View(issues);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateIssueStatus(int id, string status)
+        {
+            var issue = await _context.Issues.FindAsync(id);
+
+            if (issue == null)
+            {
+                return NotFound();
+            }
+
+            issue.Status = status;
+
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Issue status updated successfully";
+
+            return RedirectToAction("Issue");
+        }
+
+
+        //=========Notice========
 
         public async Task<IActionResult> Notice()
         {

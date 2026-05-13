@@ -2,12 +2,12 @@
     ViewData["Title"] = "Dashboard";
     ViewData["ActivePage"] = "Dashboard";
 }
-
+@model List<wcm.ViewModels.UserNoticeVM>
 <!-- Welcome Banner -->
 <div class="welcome-banner mb-4">
-    <h2>Welcome back, John!</h2>
+    <h2>Welcome back, @ViewData["UserName"] </h2>
     <p>Stay updated with the latest community news, track your requests, and participate in upcoming events.</p>
-    <a href="@Url.Action("ReportIssue","Issues")" class="btn btn-light-custom"
+    <a href="@Url.Action("ReportIssue","Home")" class="btn btn-light-custom"
         style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;padding:10px 24px;border-radius:var(--radius-sm);font-weight:600;transition:var(--transition);">Report an Issue</a>
 </div>
 
@@ -17,7 +17,7 @@
         <div class="stat-card">
             <div class="icon-box blue"><i class="bi bi-list-check"></i></div>
             <div class="stat-info">
-                <h3 id="statRequests">0</h3>
+                <h3 id="statRequests">@ViewData["TotalRequests"]</h3>
                 <p>Total Requests</p>
             </div>
         </div>
@@ -26,8 +26,8 @@
         <div class="stat-card">
             <div class="icon-box orange"><i class="bi bi-hourglass-split"></i></div>
             <div class="stat-info">
-                <h3 id="statInProgress">0</h3>
-                <p>In Progress</p>
+                <h3 id="statInProgress">@ViewData["OpenRequests"]</h3>
+                <p>Open Issues</p>
             </div>
         </div>
     </div>
@@ -35,8 +35,8 @@
         <div class="stat-card">
             <div class="icon-box green"><i class="bi bi-check-circle"></i></div>
             <div class="stat-info">
-                <h3 id="statResolved">0</h3>
-                <p>Resolved</p>
+                <h3 id="statResolved">@ViewData["InProgressRequests"]</h3>
+                <p>Pending</p>
             </div>
         </div>
     </div>
@@ -44,8 +44,8 @@
         <div class="stat-card">
             <div class="icon-box red"><i class="bi bi-megaphone"></i></div>
             <div class="stat-info">
-                <h3 id="statNotices">0</h3>
-                <p>Notices</p>
+                <h3 id="statNotices">@ViewData["ResolvedRequests"]</h3>
+                <p>Resolved</p>
             </div>
         </div>
     </div>
@@ -56,10 +56,30 @@
     <div class="col-lg-7">
         <div class="card-custom p-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="fw-bold mb-0">Recent Notices</h5>
-                <a href="@Url.Action("Index","Notices")" class="btn btn-sm btn-outline-custom">View All</a>
+                <h5 class="fw-bold mb-0">Recent Notices
+                    @foreach (var item in Model)
+                    {
+                        <div class="notice-item mb-3 p-3 border rounded">
+                            <h6 class="mb-1">@item.Title</h6>
+
+                            <small class="text-muted">
+                                @item.Category • @item.PublishDate.ToString("dd MMM yyyy") • By @item.UserName
+                            </small>
+
+                            @if (!string.IsNullOrEmpty(item.Description))
+                            {
+                                <p class="mb-0 mt-2 text-muted">
+                                    @item.Description
+                                </p>
+                            }
+                        </div>
+                    }
+                </h5>
+                <a href="@Url.Action("Notice","Home")" class="btn btn-sm btn-outline-custom">View All</a>
             </div>
-            <div id="recentNotices"></div>
+            <div id="recentNotices">
+
+            </div>
         </div>
     </div>
 
@@ -68,19 +88,19 @@
         <div class="card-custom p-4">
             <h5 class="fw-bold mb-3">Quick Actions</h5>
             <div class="quick-actions flex-column">
-                <a href="@Url.Action("ReportIssue","Issues")" class="quick-action-btn">
+                <a href="@Url.Action("ReportIssue","Home")" class="quick-action-btn">
                     <i class="bi bi-tools" style="background:linear-gradient(135deg,#FEF2F2 0%,#FEE2E2 100%);color:#EF4444;box-shadow:0 2px 8px rgba(239,68,68,0.1);"></i>
                     <span>Report Issue</span>
                 </a>
-                <a href="@Url.Action("MyRequests","Issues")" class="quick-action-btn">
+                <a href="@Url.Action("MyRequests","Home")" class="quick-action-btn">
                     <i class="bi bi-list-check" style="background:linear-gradient(135deg,#EEF2FF 0%,#E0E7FF 100%);color:#6366F1;box-shadow:0 2px 8px rgba(99,102,241,0.1);"></i>
                     <span>View Requests</span>
                 </a>
-                <a href="@Url.Action("Index","Events")" class="quick-action-btn">
+                <a href="@Url.Action("Events", "Home")" class="quick-action-btn">
                     <i class="bi bi-calendar-event" style="background:linear-gradient(135deg,#ECFDF5 0%,#D1FAE5 100%);color:#10B981;box-shadow:0 2px 8px rgba(16,185,129,0.1);"></i>
                     <span>Browse Events</span>
                 </a>
-                <a href="@Url.Action("Index","Contact")" class="quick-action-btn">
+                <a href="@Url.Action("Contact", "Home")" class="quick-action-btn">
                     <i class="bi bi-envelope" style="background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);color:#F59E0B;box-shadow:0 2px 8px rgba(245,158,11,0.1);"></i>
                     <span>Contact Admin</span>
                 </a>

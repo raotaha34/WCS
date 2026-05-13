@@ -20,11 +20,11 @@
         <div class="sidebar-logo"><i class="bi bi-buildings"></i> Smart Community</div>
         <ul class="sidebar-menu">
             <li><a href="@Url.Action("Index","Home")" class="@(ViewData["ActivePage"]?.ToString() == "Dashboard" ? "active" : "")"><i class="bi bi-house-door"></i> Dashboard</a></li>
-            <li><a href="@Url.Action("Index","Notices")" class="@(ViewData["ActivePage"]?.ToString() == "Notices" ? "active" : "")"><i class="bi bi-megaphone"></i> Notices</a></li>
-            <li><a href="@Url.Action("Index","Events")" class="@(ViewData["ActivePage"]?.ToString() == "Events" ? "active" : "")"><i class="bi bi-calendar-event"></i> Events</a></li>
-            <li><a href="@Url.Action("ReportIssue","Issues")" class="@(ViewData["ActivePage"]?.ToString() == "ReportIssue" ? "active" : "")"><i class="bi bi-tools"></i> Report Issue</a></li>
-            <li><a href="@Url.Action("MyRequests","Issues")" class="@(ViewData["ActivePage"]?.ToString() == "MyRequests" ? "active" : "")"><i class="bi bi-list-check"></i> My Requests</a></li>
-            <li><a href="@Url.Action("Index","Contact")" class="@(ViewData["ActivePage"]?.ToString() == "Contact" ? "active" : "")"><i class="bi bi-envelope"></i> Contact Us</a></li>
+            <li><a href="@Url.Action("Notice","Home")" class="@(ViewData["ActivePage"]?.ToString() == "Notices" ? "active" : "")"><i class="bi bi-megaphone"></i> Notices</a></li>
+            <li><a href="@Url.Action("Event","Home")" class="@(ViewData["ActivePage"]?.ToString() == "Events" ? "active" : "")"><i class="bi bi-calendar-event"></i> Events</a></li>
+            <li><a href="@Url.Action("MyRequests", "Home")" class="@(ViewData["ActivePage"]?.ToString() == "ReportIssue" ? "active" : "")"><i class="bi bi-tools"></i>My Requests</a></li>
+            <li><a href="@Url.Action("ReportIssue", "Home")" class="@(ViewData["ActivePage"]?.ToString() == "MyRequests" ? "active" : "")"><i class="bi bi-list-check"></i>  Report Issue</a></li>
+            <li><a href="@Url.Action("Contact", "Home")" class="@(ViewData["ActivePage"]?.ToString() == "Contact" ? "active" : "")"><i class="bi bi-envelope"></i> Contact Us</a></li>
             <li><a href="@Url.Action("Logout","Account")" class="logout-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
         </ul>
     </div>

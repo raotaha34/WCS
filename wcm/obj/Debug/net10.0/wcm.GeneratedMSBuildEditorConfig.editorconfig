@@ -50,28 +50,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzaWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/WCS/wcm/Views/Contact/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+[C:/Users/hassa/source/WCS/wcm/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/WCS/wcm/Views/Events/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEluZGV4LmNzaHRtbA==
+[C:/Users/hassa/source/WCS/wcm/Views/Home/Event.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFdmVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hassa/source/WCS/wcm/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/WCS/wcm/Views/Issues/MyRequests.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXE15UmVxdWVzdHMuY3NodG1s
+[C:/Users/hassa/source/WCS/wcm/Views/Home/MyRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/WCS/wcm/Views/Issues/ReportIssue.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXFJlcG9ydElzc3VlLmNzaHRtbA==
+[C:/Users/hassa/source/WCS/wcm/Views/Home/Notice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3RpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hassa/source/WCS/wcm/Views/Notices/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWNlc1xJbmRleC5jc2h0bWw=
+[C:/Users/hassa/source/WCS/wcm/Views/Home/ReportIssue.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXBvcnRJc3N1ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hassa/source/WCS/wcm/Views/Shared/_AdminLayout.cshtml]

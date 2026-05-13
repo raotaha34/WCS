@@ -1,8 +1,31 @@
+@model List<wcm.ViewModels.AdminIssueVM>
+
 @{
     Layout = "_AdminLayout";
     ViewData["Title"] = "Issues Management";
     ViewData["ActivePage"] = "Issues";
 }
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Manage Events";
+    ViewData["ActivePage"] = "Events";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+
 
 <div class="page-header">
     <h1><i class="bi bi-exclamation-triangle me-2"></i>Issues Management</h1>
@@ -20,8 +43,7 @@
             <select id="issueFilter" class="form-select">
                 <option value="">All Statuses</option>
                 <option value="Pending">Pending</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Resolved">Resolved</option>
+                <option value="In Progress">OpenIssue</option>
             </select>
         </div>
         <div class="col-md-4 text-md-end">
@@ -36,7 +58,98 @@
             <thead>
                 <tr><th>Issue</th><th>Resident</th><th>Category</th><th>Status</th><th>Date</th><th>Action</th></tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.Title</td>
+
+                            <td>@item.ResidentName</td>
+
+                            <td>@item.Category</td>
+
+                           <td>
+                         @if (item.Status == "OpenIssue")
+                          {
+                            <span class="badge bg-warning text-dark">
+                            Open Issues
+                             </span>
+                            }
+                            else if (item.Status == "In Progress")
+                            {
+                            <span class="badge bg-primary">
+                             In Progress
+                            </span>
+                               }
+                            else if (item.Status == "Resolved")
+                           {
+                            <span class="badge bg-success">
+                            Resolved
+                            </span>
+                                    }
+                           </td>
+
+
+                            <td>
+                                @item.CreatedAt.ToString("dd MMM yyyy")
+                            </td>
+
+                            <td>
+
+                                <form asp-action="UpdateIssueStatus"
+                                      asp-controller="Admin"
+                                      method="post">
+
+                                    <input type="hidden"
+                                           name="id"
+                                           value="@item.Id" />
+
+                                    <select name="status"
+                                            class="form-select form-select-sm mb-2">
+
+                                        <option value="Open Issue"
+                                                selected="@(item.Status == "OpenIssue")">
+                                            OpenIssue
+                                        </option>
+
+                                        <option value="In Progress"
+                                                selected="@(item.Status == "Pending")">
+                                            In Progress
+                                        </option>
+
+                                        <option value="Resolved"
+                                                selected="@(item.Status == "Resolved")">
+                                            Resolved
+                                        </option>
+
+                                    </select>
+
+                                    <button type="submit"
+                                            class="btn btn-sm btn-primary-custom w-100">
+                                        Update
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center py-4">
+                            No issues found.
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
         </table>
     </div>
 </div>
