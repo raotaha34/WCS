@@ -3,7 +3,30 @@
     ViewData["Title"] = "My Requests";
     ViewData["ActivePage"] = "MyRequests";
 }
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Issues Management";
+    ViewData["ActivePage"] = "Issues";
+}
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Manage Events";
+    ViewData["ActivePage"] = "Events";
+}
 
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
 <div class="page-header">
     <h1><i class="bi bi-list-check me-2"></i>My Requests</h1>
     <a href="@Url.Action("ReportIssue","Home")" class="btn btn-primary-custom"><i class="bi bi-plus-lg me-1"></i>New Request</a>
