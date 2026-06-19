@@ -9,18 +9,21 @@
   flex-wrap: wrap;
 }
 .quick-action-btn {
-  background: var(--card);
-  border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: var(--radius);
   padding: 16px 24px;
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-dark);
   transition: var(--transition);
   flex: 1;
   min-width: 160px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 .quick-action-btn i {
   width: 44px;
@@ -81,7 +84,9 @@
 
 /* --- Notice Cards --- */
 .notice-card {
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
@@ -89,7 +94,7 @@
   display: flex;
   gap: 18px;
   margin-bottom: 20px;
-  border: 1px solid rgba(11,31,58,0.04);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
 }
@@ -146,12 +151,14 @@
 
 /* --- Event Cards --- */
 .event-card {
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  border: 1px solid rgba(11,31,58,0.04);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
 }
@@ -162,9 +169,9 @@
 .event-card:nth-child(5) { animation-delay: 0.25s; }
 .event-card:nth-child(6) { animation-delay: 0.3s; }
 .event-card:hover {
-  transform: translateY(-6px) scale(1.01);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-lg);
-  border-color: #CBD5E1;
+  border-color: rgba(79,70,229,0.3);
 }
 .event-card .event-img {
   width: 100%;

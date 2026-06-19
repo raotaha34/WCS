@@ -8,92 +8,93 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = wcm
 build_property.RootNamespace = wcm
-build_property.ProjectDir = C:\Users\Connect2Aryans\Desktop\WCS\wcm\
+build_property.ProjectDir = C:\Users\Rrs computers\Desktop\WCS\WCS-main\wcm\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 9.0
+build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Connect2Aryans\Desktop\WCS\wcm
+build_property.MSBuildProjectDirectory = C:\Users\Rrs computers\Desktop\WCS\WCS-main\wcm
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Account/Login.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/AdminSettings/Setting.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/AdminSettings/Setting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5TZXR0aW5nc1xTZXR0aW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Admin/Event.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Admin/Event.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRXZlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Admin/Index.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Admin/Issue.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Admin/Issue.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSXNzdWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Admin/Notice.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Admin/Notice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTm90aWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Admin/Resident.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Admin/Resident.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVzaWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Home/Contact.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Home/Event.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Home/Event.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFdmVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Home/Index.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Home/MyRequests.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Home/MyRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Home/Notice.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Home/Notice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3RpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Home/ReportIssue.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Home/ReportIssue.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXBvcnRJc3N1ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Shared/_Layout.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Shared/_ViewImports.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Shared/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/Shared/_ViewStart.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/Shared/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/_ViewImports.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Connect2Aryans/Desktop/WCS/wcm/Views/_ViewStart.cshtml]
+[C:/Users/Rrs computers/Desktop/WCS/WCS-main/wcm/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
